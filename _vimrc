@@ -1,7 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vundle plugin 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible      
+set nocompatible
 filetype off           
 set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
@@ -92,7 +92,7 @@ set dy=lastline
 "set ch=2
 "set laststatus=2   " Always show the statusline
 
-"ÉèÖÃÓïÑÔ±àÂë
+"è®¾ç½®è¯­è¨€ç¼–ç 
 set enc=utf-8
 "set ambiwidth=double
 let $LANG ='en_US'
@@ -101,24 +101,24 @@ let $LANG ='en_US'
 set langmenu=en;
 :source $VIMRUNTIME/menu.vim
 
-"ÉèÖÃËõ½ø´óĞ¡
+"è®¾ç½®ç¼©è¿›å¤§å°
 set tabstop=4
 set shiftwidth=4
 
-"Ê¹ÓÃspace´úÌætab
+"ä½¿ç”¨spaceä»£æ›¿tab
 set expandtab  
 
 "no backup and swap file
 set nobackup
 set noswapfile
 
-set lines=35 columns=88
+set lines=30 columns=88
 set tags=tags;
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                autocmd     
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autocmd GUIEnter * call libcallnr("vimtweak.dll", "SetAlpha", 225)  
-"×Ô¶¯ÏÔÊ¾µ±Ç°¹¤×÷ÎÄ¼ş¼Ğ
+"è‡ªåŠ¨æ˜¾ç¤ºå½“å‰å·¥ä½œæ–‡ä»¶å¤¹
 autocmd BufEnter *.* pwd
 "quickfix 
 autocmd QuickfixCmdPost make call QfMakeConv()
@@ -127,7 +127,7 @@ autocmd GUIEnter * set visualbell t_vb=
 autocmd GUIEnter * set autochdir 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                º¯Êı    
+"                å‡½æ•°    
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 func! Install()
     exec "silent !git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle"
@@ -208,7 +208,7 @@ function! QfMakeConv()
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                Æ½Ì¨¶¨Òå    
+"                å¹³å°å®šä¹‰    
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('win32') || has('win32unix') || has('win64')
     set makeprg =cl\ %\ -O2\ -EHsc 
@@ -241,7 +241,7 @@ else
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                °´¼ü°ó¶¨    
+"                æŒ‰é”®ç»‘å®š    
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Set mapleader
 let mapleader = ","
@@ -255,7 +255,7 @@ map z :nohl<cr>
 
 "map <space><space> /
 
-"·½±ãµ½ĞĞÊ×£¬·½±ãµ½ĞĞÎ²
+"æ–¹ä¾¿åˆ°è¡Œé¦–ï¼Œæ–¹ä¾¿åˆ°è¡Œå°¾
 map <s-h> 0
 map L $
 "inoremap <C-Enter> <ESC>o
@@ -264,10 +264,10 @@ inoremap <c-k> <up>
 inoremap <c-j> <down>
 inoremap <c-h> <left>
 inoremap <c-l> <right>
-"Ìæ»»Ñ¡ÖĞµ¥´Ê£¬ºÜÓĞÓÃ
+"æ›¿æ¢é€‰ä¸­å•è¯ï¼Œå¾ˆæœ‰ç”¨
 map s viw"0P
 
-"ÔÚ´°¿ÚÖĞÇĞ»»
+"åœ¨çª—å£ä¸­åˆ‡æ¢
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
@@ -329,8 +329,5 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='light'
 "NeoComplCache
 let g:neocomplcache_enable_at_startup = 1
-highlight BookmarkLine ctermbg=194 ctermfg=NONE
 let g:bookmark_highlight_lines = 1
 nmap <silent> <leader>v :silent ! start "C:\\Program Files\Internet Explorer\iexplore.exe " %<CR>
-:nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-:nnoremap <leader>g :grep -R <cWORD> .<cr>
